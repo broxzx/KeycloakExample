@@ -1,0 +1,14 @@
+server:
+  port: 8080
+
+
+spring:
+  application:
+    name: keycloak-example
+
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          jwk-set-uri: http://localhost:8081/realms/oauth2-demo-realm/protocol/openid-connect/certs
+
