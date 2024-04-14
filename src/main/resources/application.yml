@@ -8,7 +8,17 @@ spring:
 
   security:
     oauth2:
-      resourceserver:
-        jwt:
-          jwk-set-uri: http://localhost:8081/realms/oauth2-demo-realm/protocol/openid-connect/certs
-
+      client:
+        provider:
+          keycloak:
+            issuer-uri: http://localhost:8180/realms/manager-realm
+            user-name-attribute: preferred_username
+        registration:
+          keycloak:
+            client-id: manager-app
+            client-secret: HqSLYJHxFz3ZNoab90a9y3WVR8WA2dij
+            scope:
+              - openid
+              - microprofile-jwt
+              - view
+              - edit
